@@ -136,7 +136,7 @@ From Reservation res
 INNER JOIN Room r ON res.RoomId = r.RoomId
 WHERE r.MaxOccupancy >= 3
 AND ((res.StartDate BETWEEN '2023-4-1' AND '2023-4-30')
-OR (res.EndDate BETWEEN '2023-4-1' AND '2023-4-30'));
+	OR (res.EndDate BETWEEN '2023-4-1' AND '2023-4-30'));
 
 -- Results
 -- Message: 2 row(s) returned
