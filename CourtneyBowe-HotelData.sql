@@ -61,7 +61,6 @@ VALUES (1,201,2,4,3,2,0,2,4),
     (16,308,1,1,2,3,1,2,2),
     (17,401,3,5,5,4,1,3,8),
     (18,402,3,5,5,4,1,3,8);
-/*!40000 ALTER TABLE `room` ENABLE KEYS */;
 
 -- Add info to Reservation table
 INSERT INTO `reservation`
