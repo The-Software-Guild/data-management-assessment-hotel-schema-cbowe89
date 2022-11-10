@@ -39,8 +39,8 @@ CREATE TABLE RoomType (
 CREATE TABLE PriceGroup (
     PriceGroupId INT AUTO_INCREMENT,
     PriceGroupName VARCHAR(25) NOT NULL,
-    BasePrice DOUBLE NOT NULL,
-    AddlGuestPrice DOUBLE,
+    BasePrice DECIMAL(7, 2) NOT NULL,
+    AddlGuestPrice DECIMAL(7, 2),
     CONSTRAINT pk_PriceGroup
         PRIMARY KEY (PriceGroupId)
 );
@@ -89,7 +89,7 @@ CREATE TABLE Reservation (
     ChildGuestNum INT,
     StartDate DATE NOT NULL,
     EndDate DATE NOT NULL,
-    TotalRoomCost DECIMAL NOT NULL,
+    TotalRoomCost DECIMAL(7, 2) NOT NULL,
     CONSTRAINT pk_Reservation
         PRIMARY KEY (ReservationId),
     CONSTRAINT fk_Reservation_Room
