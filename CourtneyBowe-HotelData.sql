@@ -90,4 +90,10 @@ VALUES (1,16,2,1,0,'2023-02-02','2023-02-04',300),
     (24,9,2,2,2,'2022-11-22','2023-11-25',600),
     (25,10,11,2,0,'2023-12-24','2023-12-28',700);
 
-    
+-- Delete records that reference
+DELETE FROM reservation
+WHERE GuestId = 8;
+
+-- Delete record for
+DELETE FROM guest
+WHERE GuestId = 8;
