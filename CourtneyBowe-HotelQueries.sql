@@ -124,22 +124,63 @@ ORDER BY RoomNum;
 -----------------------------------------------------------------------------
 -- 5. Write a query that returns all rooms with a capacity of three or
 -- more and that are reserved on any date in April 2023.
-
+SELECT
+	r.RoomNum,
+    r.MaxOccupancy,
+    res.StartDate,
+    res.EndDate
+From Reservation res
+INNER JOIN Room r ON res.RoomId = r.RoomId
+WHERE r.MaxOccupancy >= 3
+AND ((res.StartDate BETWEEN '2023-4-1' AND '2023-4-30')
+OR res.EndDate BETWEEN '2023-4-1' AND '2023-4-30');
 
 -- Results
+-- Message: 2 row(s) returned
+-- RoomNum  MaxOccupancy  StartDate   EndDate
+-- 304	    4	          2023-03-31  2023-04-05
+-- 301	    4	          2023-04-09  2023-04-13
 
 -----------------------------------------------------------------------------
 -- 6. Write a query that returns a list of all guest names and the number
 -- of reservations per guest, sorted starting with the guest with the
 -- most reservations and then by the guest's last name.
-
+SELECT
+	g.FirstName,
+    g.LastName,
+    COUNT(res.ReservationId) ReservationCount
+FROM Reservation res
+LEFT OUTER JOIN Guest g ON res.GuestId = g.GuestId
+GROUP BY g.GuestId
+ORDER BY ReservationCount DESC, g.LastName ASC;
 
 -- Results
+-- Message: 12 row(s) returned
+-- FirstName  LastName      ReservationCount
+-- Mack	      Simmer	    4
+-- Bettyann	  Seery	        3
+-- Duane	  Cullison	    2
+-- Walter	  Holaway	    2
+-- Aurore	  Lipton	    2
+-- Maritza	  Tilton	    2
+-- Joleen	  Tison	        2
+-- Wilfred	  Vise	        2
+-- Karie	  Yang	        2
+-- Zachery	  Luechtefeld	1
+-- Jeremiah	  Pendergrass	1
 
 -----------------------------------------------------------------------------
 -- 7. Write a query that displays the name, address, and phone number
 -- of a guest based on their phone number. (Choose a phone number from
 -- the existing data.)
-
+SELECT
+	FirstName,
+    LastName,
+    PhoneNum
+FROM guest
+WHERE PhoneNum = 3775070974;
 
 -- Results
+-- Message: 1 row(s) returned
+-- FirstName  LastName  PhoneNum
+-- Aurore	  Lipton	3775070974
