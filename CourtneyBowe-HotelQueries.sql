@@ -139,9 +139,8 @@ AND ((res.StartDate BETWEEN '2023-4-1' AND '2023-4-30')
 	OR (res.EndDate BETWEEN '2023-4-1' AND '2023-4-30'));
 
 -- Results
--- Message: 2 row(s) returned
+-- Message: 1 row(s) returned
 -- RoomNum  MaxOccupancy  StartDate   EndDate
--- 304	    4	          2023-03-31  2023-04-05 ***
 -- 301	    4	          2023-04-09  2023-04-13
 
 -----------------------------------------------------------------------------
