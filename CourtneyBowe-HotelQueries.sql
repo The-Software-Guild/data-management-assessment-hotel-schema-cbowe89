@@ -1,5 +1,9 @@
 -- Courtney Bowe
 -- 11/09/2022
+
+-- Use CourtneyBoweHotelDB database
+USE CourtneyBoweHotelDB;
+
 -----------------------------------------------------------------------------
 -- 1. Write a query that returns a list of reservations that end in
 -- July 2023, including the name of the guest, the room number(s),

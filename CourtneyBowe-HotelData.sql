@@ -1,7 +1,7 @@
 -- Courtney Bowe
 -- 11/09/2022
 
--- User CourtneyBoweHotelDB database
+-- Use CourtneyBoweHotelDB database
 USE CourtneyBoweHotelDB;
 
 -- Add info to Guest table
