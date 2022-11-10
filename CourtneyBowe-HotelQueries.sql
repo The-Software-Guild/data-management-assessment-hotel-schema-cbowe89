@@ -95,7 +95,7 @@ LEFT JOIN Reservation res ON r.RoomId = res.RoomId
 ORDER BY RoomNum;
 
 -- Results
--- Message: 27 row(s) returned
+-- Message: 26 row(s) returned
 -- RoomNum  ReservationId  TotalRoomCost
 -- 201	    4	           199.99
 -- 202	    7	           349.98
@@ -113,7 +113,6 @@ ORDER BY RoomNum;
 -- 302	    6	           924.95
 -- 302	    25	           699.96
 -- 303	    18	           199.99
--- 304	    8	           874.95
 -- 304	    14	           184.99
 -- 305	    3	           349.98
 -- 305	    19	           349.98
@@ -137,12 +136,12 @@ From Reservation res
 INNER JOIN Room r ON res.RoomId = r.RoomId
 WHERE r.MaxOccupancy >= 3
 AND ((res.StartDate BETWEEN '2023-4-1' AND '2023-4-30')
-OR res.EndDate BETWEEN '2023-4-1' AND '2023-4-30');
+OR (res.EndDate BETWEEN '2023-4-1' AND '2023-4-30'));
 
 -- Results
 -- Message: 2 row(s) returned
 -- RoomNum  MaxOccupancy  StartDate   EndDate
--- 304	    4	          2023-03-31  2023-04-05
+-- 304	    4	          2023-03-31  2023-04-05 ***
 -- 301	    4	          2023-04-09  2023-04-13
 
 -----------------------------------------------------------------------------
@@ -159,7 +158,7 @@ GROUP BY g.GuestId
 ORDER BY ReservationCount DESC, g.LastName ASC;
 
 -- Results
--- Message: 12 row(s) returned
+-- Message: 11 row(s) returned
 -- FirstName  LastName      ReservationCount
 -- Mack	      Simmer	    4
 -- Bettyann	  Seery	        3
@@ -171,7 +170,6 @@ ORDER BY ReservationCount DESC, g.LastName ASC;
 -- Wilfred	  Vise	        2
 -- Karie	  Yang	        2
 -- Zachery	  Luechtefeld	1
--- Jeremiah	  Pendergrass	1
 
 -----------------------------------------------------------------------------
 -- 7. Write a query that displays the name, address, and phone number
