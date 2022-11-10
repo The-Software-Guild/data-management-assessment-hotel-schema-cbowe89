@@ -25,8 +25,8 @@ DROP TABLE IF EXISTS `pricegroup`;
 CREATE TABLE `pricegroup` (
   `PriceGroupId` int NOT NULL AUTO_INCREMENT,
   `PriceGroupName` varchar(25) NOT NULL,
-  `BasePrice` double NOT NULL,
-  `AddlGuestPrice` double DEFAULT NULL,
+  `BasePrice` decimal(7,2) NOT NULL,
+  `AddlGuestPrice` decimal(7,2) DEFAULT NULL,
   PRIMARY KEY (`PriceGroupId`)
 ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -37,7 +37,7 @@ CREATE TABLE `pricegroup` (
 
 LOCK TABLES `pricegroup` WRITE;
 /*!40000 ALTER TABLE `pricegroup` DISABLE KEYS */;
-INSERT INTO `pricegroup` VALUES (1,'Single(no jacuzzi)',149.99,NULL),(2,'Single(with jacuzzi)',174.99,NULL),(3,'Double(no jacuzzi)',174.99,10),(4,'Double(with jacuzzi)',199.99,10),(5,'Suite',399.99,20);
+INSERT INTO `pricegroup` VALUES (1,'Single(no jacuzzi)',149.99,NULL),(2,'Single(with jacuzzi)',174.99,NULL),(3,'Double(no jacuzzi)',174.99,10.00),(4,'Double(with jacuzzi)',199.99,10.00),(5,'Suite',399.99,20.00);
 /*!40000 ALTER TABLE `pricegroup` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -50,4 +50,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-11-09 18:20:19
+-- Dump completed on 2022-11-09 20:40:35
